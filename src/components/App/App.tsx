@@ -12,36 +12,18 @@ function App() {
 
   useEffect(() => {
     // Fetch all queues and their message counts
-    axios
-      .get("http://localhost:5000/api/queues")
-      .then((response: AxiosResponse) => {
-        setQueues(response.data);
-      })
-      .catch((error: AxiosError) => {
-        console.error("Error fetching queues:", error);
-      });
-  }, []);
-
-  const handleQueueSelect = (queue_name: string) => {
-    setSelectedQueue(queue_name);
-  };
-
-  const handleGoClick = () => {
-    if (selectedQueue) {
+    const timer = setInterval(() => {
       axios
-        .get(`http://localhost:5000/api/${selectedQueue}?timeout=5000`)
+        .get("http://localhost:5000/api/queues")
         .then((response: AxiosResponse) => {
-          setQueueMessage(JSON.stringify(response.data));
+          setQueues(response.data);
         })
         .catch((error: AxiosError) => {
-          if (error.response && error.response.status === 204) {
-            setQueueMessage("No messages available");
-          } else {
-            console.error("Error fetching message:", error);
-          }
+          console.error("Error fetching queues:", error);
         });
-    }
-  };
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div className="app">
