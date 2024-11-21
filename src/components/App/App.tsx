@@ -29,11 +29,7 @@ function App() {
     <div className="app">
       <header className="App-header">
         <h1>Message Queue Dashboard</h1>
-        <Queues
-          queues={queues}
-          selectedQueue={selectedQueue}
-          setQueue={setSelectedQueue}
-        />
+        <Queues queues={queues} setQueue={setSelectedQueue} />
         <SelectedQueue
           message={queueMessage}
           selectedQueue={selectedQueue}

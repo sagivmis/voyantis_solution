@@ -20,12 +20,15 @@
 
   align-items: center;
   gap: 1em;
-}
-button.go-btn:hover {
-  border: none;
   color: white;
   background-color: #333;
-  transition: all 1s ease;
+  transition: all 0.25s ease-out;
+}
+button.go-btn:hover {
+  background-color: #f2f0ee;
+  color: #333;
+  border: none;
+  transition: all 0.75s ease-in;
 }
 
 h2.selected-queue-label {

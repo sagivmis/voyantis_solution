@@ -1,16 +1,14 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { QueueSummary } from "../../util";
-import axios, { AxiosResponse, AxiosError } from "axios";
 import "./queues.css";
 
 interface IQueues {
-  selectedQueue: string;
   queues: QueueSummary[];
   setQueue: Dispatch<SetStateAction<string>>;
 }
 
 const Queues = (props: IQueues) => {
-  const { queues, selectedQueue, setQueue } = props;
+  const { queues, setQueue } = props;
 
   const handleQueueSelect = (queue_name: string) => {
     setQueue(queue_name);
