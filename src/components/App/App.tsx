@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import axios, { AxiosResponse, AxiosError } from "axios";
 import "./App.css";
-
-type QueueSummary = {
-  queue_name: string;
-  message_count: number;
-};
+import { type QueueSummary } from "../../util";
+import Queues from "../Queues";
+import SelectedQueue from "../Queues/SelectedQueue/SelectedQueue";
 
 function App() {
   const [queues, setQueues] = useState<QueueSummary[]>([]);
@@ -49,30 +47,16 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Message Queue Dashboard</h1>
-        <div className="queue-list">
-          <h2>Available Queues</h2>
-          <ul>
-            {queues.map((queue) => (
-              <li key={queue.queue_name}>
-                <button onClick={() => handleQueueSelect(queue.queue_name)}>
-                  {queue.queue_name} (Messages: {queue.message_count})
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-        {selectedQueue && (
-          <div className="queue-details">
-            <h2>Selected Queue: {selectedQueue}</h2>
-            <button onClick={handleGoClick}>Go</button>
-            {queueMessage && (
-              <div className="queue-message">
-                <h3>Message:</h3>
-                <p>{queueMessage}</p>
-              </div>
-            )}
-          </div>
-        )}
+        <Queues
+          queues={queues}
+          selectedQueue={selectedQueue}
+          setQueue={setSelectedQueue}
+        />
+        <SelectedQueue
+          message={queueMessage}
+          selectedQueue={selectedQueue}
+          setMessage={setQueueMessage}
+        />
       </header>
     </div>
   );
