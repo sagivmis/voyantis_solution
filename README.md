@@ -19,7 +19,12 @@ Gets the next message from queue_name.
 Will return 204 if there’s no message in the queue after the timeout has elapsed.
 If a timeout is not specified, a default of 10 seconds should be used.
 
-8. run commands:
-1. `cd ..`
-1. `npm run dev`
-1. go to https://localhost:5173/ to see the application
+\*\*\*\* you can also use those commands in a powershell:
+
+    1. Invoke-WebRequest -Uri "http://localhost:5000/api/<NAME OF QUEUE HERE>" -Method POST -Headers @{"Content-Type"="application/json"} -Body '{"text": "<YOUR MESSAGE HERE>"}'
+    2. Invoke-WebRequest -Uri "http://localhost:5000/api/myqueue?timeout=5000" -Method GET
+
+3. run commands:
+   1. `cd ..`
+   2. `npm run dev`
+4. go to https://localhost:5173/ to see the application
