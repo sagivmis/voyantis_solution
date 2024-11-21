@@ -3,7 +3,7 @@ import axios, { AxiosResponse, AxiosError } from "axios";
 import "./App.css";
 import { type QueueSummary } from "../../util";
 import Queues from "../Queues";
-import SelectedQueue from "../Queues/SelectedQueue/SelectedQueue";
+import SelectedQueue from "../SelectedQueue/SelectedQueue";
 
 function App() {
   const [queues, setQueues] = useState<QueueSummary[]>([]);
@@ -44,7 +44,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <header className="App-header">
         <h1>Message Queue Dashboard</h1>
         <Queues

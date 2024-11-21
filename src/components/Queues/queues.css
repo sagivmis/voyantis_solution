@@ -1,0 +1,20 @@
+button.queue {
+  /* display: ; */
+}
+
+.queue-list-item {
+  display: block;
+}
+
+.queue-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.queue-list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

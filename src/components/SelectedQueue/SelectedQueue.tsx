@@ -1,5 +1,6 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 import React, { Dispatch, SetStateAction } from "react";
+import "./selected-queue.css";
 
 interface ISelectedQueue {
   message: string | null;
@@ -29,18 +30,21 @@ const SelectedQueue = (props: ISelectedQueue) => {
   };
 
   return (
-    selectedQueue && (
-      <div className="queue-details">
-        <h2>Selected Queue: {selectedQueue}</h2>
-        <button onClick={handleGoClick}>Go</button>
-        {message && (
-          <div className="queue-message">
-            <h3>Message:</h3>
-            <p>{message}</p>
-          </div>
-        )}
-      </div>
-    )
+    <div className="selected-queue-details">
+      {selectedQueue && (
+        <>
+          {" "}
+          <h2>Selected Queue: {selectedQueue}</h2>
+          <button onClick={handleGoClick}>Go</button>
+          {message && (
+            <div className="queue-message">
+              <h3>Message:</h3>
+              <p>{message}</p>
+            </div>
+          )}
+        </>
+      )}
+    </div>
   );
 };
 

@@ -1,0 +1,16 @@
+.selected-queue-details {
+  background-color: white;
+  padding: 1em;
+  border-radius: 5px;
+
+  min-inline-size: 50%;
+  min-block-size: 15em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  position: absolute;
+  bottom: 5%;
+  left: 25%;
+}
