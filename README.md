@@ -4,11 +4,11 @@ to install:
 
 1. open the folder in terminal
 2. run the following commands:
-3. `npm install`
-4. `cd voynatis_back`
-5. `npm i`
-6. `npm run dev`
-7. then use your preferred platform to send requests to the server and fill the queues as pleased.
+   1. `npm install`
+   2. `cd voynatis_back`
+   3. `npm i`
+   4. `npm run dev`
+3. then use your preferred platform to send requests to the server and fill the queues as pleased.
 
 `POST /api/{queue_name}`  
 The body is the message in JSON format.
@@ -24,7 +24,7 @@ If a timeout is not specified, a default of 10 seconds should be used.
     1. Invoke-WebRequest -Uri "http://localhost:5000/api/<NAME OF QUEUE HERE>" -Method POST -Headers @{"Content-Type"="application/json"} -Body '{"text": "<YOUR MESSAGE HERE>"}'
     2. Invoke-WebRequest -Uri "http://localhost:5000/api/myqueue?timeout=5000" -Method GET
 
-3. run commands:
+4. run commands:
    1. `cd ..`
    2. `npm run dev`
-4. go to https://localhost:5173/ to see the application
+5. go to https://localhost:5173/ to see the application
