@@ -34,8 +34,13 @@ const SelectedQueue = (props: ISelectedQueue) => {
       {selectedQueue && (
         <>
           {" "}
-          <h2>Selected Queue: {selectedQueue}</h2>
-          <button onClick={handleGoClick}>Go</button>
+          <h2 className="selected-queue-label">
+            Selected Queue:{" "}
+            <span className="selected-queue-name">{selectedQueue}</span>
+          </h2>
+          <button onClick={handleGoClick} className="go-btn">
+            Go
+          </button>
           {message && (
             <div className="queue-message">
               <h3>Message:</h3>

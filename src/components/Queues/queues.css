@@ -1,5 +1,23 @@
 button.queue {
-  /* display: ; */
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  gap: 1em;
+}
+
+button.queue:hover {
+  border: none;
+  box-shadow: 0 13px 28px 0 hsla(340.00000000000006, 100%, 50%, 0.1);
+  transition: all 1s ease;
+}
+
+.queue-name {
+  /* font-weight: 700; */
+}
+
+.queue-messages {
+  font-weight: 300;
 }
 
 .queue-list-item {

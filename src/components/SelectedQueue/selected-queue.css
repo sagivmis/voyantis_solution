@@ -14,3 +14,24 @@
   bottom: 5%;
   left: 25%;
 }
+.go-btn {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  gap: 1em;
+}
+button.go-btn:hover {
+  border: none;
+  color: white;
+  background-color: #333;
+  transition: all 1s ease;
+}
+
+h2.selected-queue-label {
+  font-size: 1em;
+}
+.selected-queue-name {
+  font-size: 1.5em;
+  margin-left: 2em;
+}

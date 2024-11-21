@@ -26,7 +26,10 @@ const Queues = (props: IQueues) => {
               onClick={() => handleQueueSelect(queue.queue_name)}
               className="queue"
             >
-              {queue.queue_name} (Messages: {queue.message_count})
+              <span className="queue-name">{queue.queue_name}</span>{" "}
+              <span className="queue-messages">
+                Messages: {queue.message_count}
+              </span>
             </button>
           </li>
         ))}
