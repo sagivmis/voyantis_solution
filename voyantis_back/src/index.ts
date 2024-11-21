@@ -41,6 +41,14 @@ fastify.get("/api/:queue_name", async (request, reply) => {
   const message = queues[queue_name].shift();
   reply.status(200).send(message);
 });
+// GET endpoint to retrieve all queues and the number of messages in each
+fastify.get("/api/queues", (request, reply) => {
+  const queueSummary = Object.entries(queues).map(([queue_name, messages]) => ({
+    queue_name,
+    message_count: messages.length,
+  }));
+  reply.status(200).send(queueSummary);
+});
 
 // Start the server
 const PORT = 5000;
